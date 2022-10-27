@@ -24,3 +24,6 @@ example of raw POST:
         "description":"Aprenda a programar! <3",
         "value": 150
     }
+
+# Situação de exceção
+![Alt text](./exceptions/entrypoint.jpg?raw=true "Exception png")
