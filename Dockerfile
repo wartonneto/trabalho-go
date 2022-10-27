@@ -8,6 +8,15 @@ WORKDIR /app
 
 COPY go.mod ./
 COPY go.sum ./
+COPY main.go ./
 RUN go mod download
 
-COPY . ./
+COPY ./ ./
+RUN go build -o /my-server
+
+COPY /entrypoint.sh /usr/local/bin
+RUN ln -s usr/local/bin/entrypoint.sh /
+ENTRYPOINT ["./entrypoint.sh"]
+
+
+
