@@ -26,4 +26,4 @@ example of raw POST:
     }
 
 # Situação de exceção
-![Alt text](trabalho-go/exceptions/entrypoint.jpg?raw=true "Exception png")
+![plot](./exceptions/entrypoint.png)
