@@ -16,7 +16,6 @@ RUN go build -o /my-server
 
 COPY /entrypoint.sh /usr/local/bin
 RUN ln -s usr/local/bin/entrypoint.sh /
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
-
-
+EXPOSE "9000"
