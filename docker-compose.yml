@@ -1,24 +1,14 @@
 version: '3.8'
 services:
-  server:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - APP_ENV=local
-      - APP_DSN=postgres://db/trabalho-go?sslmode=disable&user=postgres&password=postgres
-    depends_on:
-      db:
-        condition: service_healthy
   db:
-    image: "postgres:alpine"
+    image: "postgres:13.5"
     restart: always
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB: "trabalho-go"
+      POSTGRES_DB: "api_biblioteca"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s

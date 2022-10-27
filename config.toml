@@ -4,6 +4,6 @@ port = "9000"
 [database]
 host = "localhost"
 port = "5432"
-user = "alexandre"
-pass = "1234"
+user = "postgres"
+pass = "postgres"
 name = "api_biblioteca"

@@ -1,5 +1,8 @@
+FROM golang:1.19-buster AS build
 
-FROM golang:1.16-alpine
+ARG MIGRATE_VERSION=4.7.1
+ADD https://github.com/golang-migrate/migrate/releases/download/v${MIGRATE_VERSION}/migrate.linux-amd64.tar.gz /tmp
+RUN tar -xzf /tmp/migrate.linux-amd64.tar.gz -C /usr/local/bin && mv /usr/local/bin/migrate.linux-amd64 /usr/local/bin/migrate
 
 WORKDIR /app
 
@@ -7,10 +10,4 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 
-COPY *.go ./
-
-RUN go build -o /trabalho-go
-
-EXPOSE 8080
-
-CMD [ "/trabalho-go" ]
+COPY . ./
