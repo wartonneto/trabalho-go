@@ -1,0 +1,9 @@
+[api]
+port = "9000"
+
+[database]
+host = "10.5.0.5"
+port = "5432"
+user = "postgres"
+pass = "postgres"
+name = "api_biblioteca"
